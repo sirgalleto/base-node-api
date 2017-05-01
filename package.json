@@ -12,6 +12,7 @@
   "author": "Sebastián Osorio <sebastian.osorio@wizeline.com>",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.25.1",
     "express": "^4.15.2"
   }
 }
