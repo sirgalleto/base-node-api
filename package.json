@@ -4,6 +4,10 @@
   "description": "WizeLine sideprojects API resources",
   "main": "index.js",
   "scripts": {
+    "start": "export NODE_ENV='production' && nodemon --exec npm run babel-node -- server.js",
+    "dev": "export NODE_ENV='development' && npm run lint && nodemon --exec npm run babel-node -- server.js",
+    "babel-node": "babel-node --presets=es2015",
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern test/*js --cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,5 +18,12 @@
   "dependencies": {
     "config": "^1.25.1",
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0"
   }
 }
