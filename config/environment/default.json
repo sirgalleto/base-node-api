@@ -13,5 +13,10 @@
         }
       }
     }
+  },
+  "logger": {
+    "level": "debug",
+    "pretty": true,
+    "colorize": true
   }
 }
