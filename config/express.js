@@ -2,7 +2,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 
-export default function (app, config) {
+export function expressConfig(app, config) {
   app.use(morgan(config.logStyle));
 
   app.set('case sensitive routing', true);
@@ -19,5 +19,11 @@ export default function (app, config) {
     res.header('Content-Type', 'application/json');
     res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
     next();
+  });
+}
+
+export function registerRoutes(app, routers, prefix = '/') {
+  routers.forEach((router) => {
+    app.use(prefix, routers[router]);
   });
 }

@@ -1,5 +1,5 @@
-import vacation from './vacation';
+import vacationRouter from './vacation';
 
-export default {
-  '/vacation': vacation,
-};
+export default [
+  vacationRouter,
+];
