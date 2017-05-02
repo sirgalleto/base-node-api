@@ -2,9 +2,12 @@ import config from 'config';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import morgan from 'morgan';
 
 const apiConfig = config.get('api');
 const app = express();
+
+app.use(morgan(apiConfig.logStyle));
 
 app.set('case sensitive routing', true);
 
