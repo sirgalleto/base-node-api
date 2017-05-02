@@ -23,7 +23,7 @@ export function expressConfig(app, config) {
 }
 
 export function registerRoutes(app, routers, prefix = '/') {
-  routers.forEach((router) => {
-    app.use(prefix, router);
+  Object.keys(routers).forEach((router) => {
+    app.use(prefix, routers[router]);
   });
 }

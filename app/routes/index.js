@@ -1,5 +1,5 @@
 import vacationRouter from './vacation';
 
-export default [
+export default {
   vacationRouter,
-];
+};
